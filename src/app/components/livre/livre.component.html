@@ -1,0 +1,97 @@
+<br>
+<br>
+
+<div class="container"   >
+  <div class="row" >
+    <div class="col-4" *ngFor="let livre of ListLivre" (dblclick)="getLivreById(livre.id)">
+
+
+      <mat-card class="example-card">
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+             <span>titre : {{livre.titre}} </span><br>
+
+            <span>resume : {{livre.resume}}</span>
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+
+    </div>
+
+
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="myModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-body">
+
+
+        <form class="example-form" [formGroup]="formGroup" >
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Titre</mat-label>
+            <input type="text" formControlName="titre" matInput>
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>ISBN</mat-label>
+            <input type="text"  formControlName="isbn" matInput>
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>nbpages</mat-label>
+            <input type="text" formControlName="pages" matInput>
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>anneeEdition</mat-label>
+            <input type="date" formControlName="anneedition" matInput>
+          </mat-form-field>
+
+
+
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>prix</mat-label>
+            <input type="text" formControlName="prix" matInput>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>resume </mat-label>
+            <input type="text" [disabled]="true" formControlName="resume" matInput >
+          </mat-form-field>
+
+
+
+          <br>
+          <br>
+          <br>
+           <button mat-raised-button color="primary" (click)="modification()">modification </button>
+          <button mat-raised-button color="warn" (click)="Suppression()">Suppression</button>
+
+        </form>
+
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
