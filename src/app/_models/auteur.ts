@@ -3,7 +3,5 @@ export class Auteur {
   cin?: number;
   nom?: string;
   prenom?: string;
-  competence?: string;
-  annee_naissance?: string;
-
+  datenaissance?: string;
 }

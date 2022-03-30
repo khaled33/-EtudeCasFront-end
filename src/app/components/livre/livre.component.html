@@ -1,8 +1,8 @@
 <br>
 <br>
 
-<div class="container"   >
-  <div class="row" >
+<div class="container">
+  <div class="row">
     <div class="col-4" *ngFor="let livre of ListLivre" (dblclick)="getLivreById(livre.id)">
 
 
@@ -10,13 +10,15 @@
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
         <mat-card-content>
           <p>
-             <span>titre : {{livre.titre}} </span><br>
+            <span>titre : {{livre.titre}} </span><br>
 
             <span>resume : {{livre.resume}}</span>
           </p>
         </mat-card-content>
-      </mat-card>
+        <button mat-raised-button color="primary" id="Auteur" (click)="Auteur(livre)"> Auteur</button>
 
+      </mat-card>
+      <br>
 
     </div>
 
@@ -37,7 +39,7 @@
       <div class="modal-body">
 
 
-        <form class="example-form" [formGroup]="formGroup" >
+        <form class="example-form" [formGroup]="formGroup">
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Titre</mat-label>
             <input type="text" formControlName="titre" matInput>
@@ -46,7 +48,7 @@
 
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>ISBN</mat-label>
-            <input type="text"  formControlName="isbn" matInput>
+            <input type="text" formControlName="isbn" matInput>
           </mat-form-field>
 
 
@@ -62,24 +64,21 @@
           </mat-form-field>
 
 
-
-
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>prix</mat-label>
             <input type="text" formControlName="prix" matInput>
           </mat-form-field>
 
           <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>resume </mat-label>
-            <input type="text" [disabled]="true" formControlName="resume" matInput >
+            <mat-label>resume</mat-label>
+            <input type="text" [disabled]="true" formControlName="resume" matInput>
           </mat-form-field>
 
 
-
           <br>
           <br>
           <br>
-           <button mat-raised-button color="primary" (click)="modification()">modification </button>
+          <button mat-raised-button color="primary" (click)="modification()">modification</button>
           <button mat-raised-button color="warn" (click)="Suppression()">Suppression</button>
 
         </form>
@@ -93,5 +92,26 @@
 </div>
 
 
+<div
+  class="modal fade"
+  id="myModal2"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
 
+  <div class="modal-dialog">
+    <div class="modal-content">
 
+      <div class="modal-body">
+        <ul class="list-group" *ngFor="let auteur of ListAuteur">
+          <li  class="list-group-item disabled bg-primary text-white" aria-disabled="true" >Auteur</li>
+          <li class="list-group-item">cin           : {{auteur.cin}}         </li>
+          <li class="list-group-item">nom           : {{auteur.nom}} </li>
+          <li class="list-group-item">prenom        : {{auteur.prenom}} </li>
+           <li class="list-group-item">datenaissance : {{auteur.datenaissance}} </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,5 @@
+import {Auteur} from "./auteur";
+
 export class Livre {
   id           ? :    number;
   titre          ?: string;
@@ -8,4 +10,5 @@ export class Livre {
   image      ?: string;
   resume        ?: string;
   idLivre?: number;
+  auteurs?: Array<Auteur> ;
 }
